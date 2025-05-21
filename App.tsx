@@ -1,26 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Home from './src/Components/Home';
+import React from 'react';
 import JuegosProvider from './src/Provider/JuegosProvider';
+import { NavigationContainer } from '@react-navigation/native';
+import Navigator from './src/Navigation/Navigator';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-      <JuegosProvider>
-          <Home></Home>
-      </JuegosProvider>
-      
-    </View>
+    <JuegosProvider>
+      <NavigationContainer>
+        <Navigator />
+      </NavigationContainer>
+    </JuegosProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
